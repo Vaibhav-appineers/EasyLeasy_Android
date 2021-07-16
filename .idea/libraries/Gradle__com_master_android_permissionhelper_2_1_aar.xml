@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.master.android:permissionhelper:2.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ae3c0688d9d975b8c2058464ad124a8/jetified-permissionhelper-2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ae3c0688d9d975b8c2058464ad124a8/jetified-permissionhelper-2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ae3c0688d9d975b8c2058464ad124a8/jetified-permissionhelper-2.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.master.android/permissionhelper/2.1/9f873c3921cf7596336f0e04ad4e8528eed058e2/permissionhelper-2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.master.android/permissionhelper/2.1/ec2bca2221ef15be687c62ed9d48a826a46dbb39/permissionhelper-2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.settings.feedback.SendFeedbackActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSendFeedback"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:gravity="center"
+            style="@style/HeaderTitleStyle"
+            android:text="@string/label_send_feedback_toolbar_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_dimen_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_back_white"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSendFeedback"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSendFeedback" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendFeedback">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:contentDescription="@string/app_logo"
+                    android:src="@drawable/ic_logo_log" />
+
+                <!--Feedback-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputBrief"
+                    style="@style/OutlinedlargeBoxInputLayoutStyle"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/hint_write_here"
+                    app:hintAnimationEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietBriefFeedback"
+                        style="@style/InputStyle"
+                        android:gravity="start"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords|textMultiLine"
+                        android:longClickable="false"
+                        android:maxLines="5"
+                        android:minHeight="@dimen/_120sdp"
+                        android:textSize="@dimen/text_dimen_14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFeedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="start"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/label_feedback_report_problem"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/text_dimen_14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFeedbackImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/cv_list_item_feedback_image" />
+
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSend"
+                    style="@style/ButtonStyleSocial"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/label_send_button" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

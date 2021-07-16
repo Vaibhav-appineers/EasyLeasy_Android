@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.lifecycle.MutableLiveData" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="phoneNumber"
+            type="String" />
+
+        <variable
+            name="time"
+            type="MutableLiveData&lt;String>" />
+
+        <variable
+            name="enableRetry"
+            type="MutableLiveData&lt;Boolean>" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.settings.changephonenumber.ChangePhoneNumberOTPActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvVerificationCode"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/label_verification_otp_toolbar_text"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_dimen_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVerificationCode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvVerificationCode" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvVerificationCode">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:contentDescription="@string/app_logo"
+                    android:src="@drawable/login_logo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOtpVerificationMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:gravity="center"
+                    android:text="@string/label_enter_verification_code_message_text"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_dimen_14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{phoneNumber}"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="16sp"
+                    tools:text="999999999" />
+
+                <com.app.easyleasy.view.otpview.OtpView
+                    android:id="@+id/otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_44sdp"
+                    android:inputType="number"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorTextBlack"
+                    app:hideLineWhenFilled="false"
+                    app:itemCount="4"
+                    app:itemSpacing="6dp"
+                    app:lineColor="@color/otp_item_state"
+                    app:state_filled="true"
+                    app:viewTypeOTP="line" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDoNotReceiveOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/label_did_not_receive_otp_text"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_dimen_14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{time}"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRetry"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/label_resend_otp_button"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnValidate"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_52sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:text="@string/label_submit_otp_button"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="@dimen/_24sdp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

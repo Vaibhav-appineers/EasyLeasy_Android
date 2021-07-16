@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#000000</color>
+    <color name="hint_text_color">#8AFFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+
+    <color name="transparent">#00000000</color>
+
+    <color name="colorBlue">#5e89f7</color>
+    <color name="colorRed">#ff4141</color>
+    <color name="colorGreen">#0da300</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorTextBlack">#222222</color>
+    <color name="colorTxtButton">#29499e</color>
+    <color name="colorTextHint">#3c3c434d</color>
+    <color name="colorTextYellow">#ffdd00</color>
+
+    <color name="swipe_col_1">@color/colorPrimary</color>
+    <color name="swipe_col_2">@color/colorRed</color>
+    <color name="swipe_col_3">@color/colorPrimary</color>
+    <color name="swipe_col_4">@color/colorPrimary</color>
+
+    <color name="colorBlackTransparentOverLay">#73000000</color>
+
+    <color name="colorAppYellow">#FAE31D</color>
+    <color name="colorTextBlue">#002c4d</color>
+    <color name="colorGrey">#989898</color>
+    <color name="colorCheckBox">#0ED6A0</color>
+
+    <color name="colorTextGrey">#666666</color>
+    <color name="colorTextDarkGrey">#222222</color>
+
+    <color name="colorInputFocus">#f4f7fa</color>
+    <color name="colorInputNormal">#f9f9f9</color>
+
+    <color name="colorGreyLight">#F4F4F4</color>
+    <color name="colorLine">#e8e8e8</color>
+    <color name="colorBg">#EDEFEF</color>
+    <color name="colorBtn">#007AFF</color>
+
+    <color name="modal">#80272727</color>
+    <color name="shadow_color">#94444444</color>
+    <color name="slate_black">#FF333333</color>
+    <color name="warm_grey">#8e8e8e</color>
+    <color name="translucent_black">#99000000</color>
+</resources>

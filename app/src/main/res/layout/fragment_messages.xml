@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.message.MessagesFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/label_home_fragment_message_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_dimen_18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RelativeOverlap" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMessage"
+                app:layout_constraintEnd_toEndOf="@+id/tvMessage"
+                app:layout_constraintTop_toTopOf="@+id/tvMessage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <com.mopub.mobileads.MoPubView
+            android:id="@+id/moPubAdView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMessage">
+
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.app.easyleasy.viewModel.OnBoardingActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.onboarding.OnBoardingActivity">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtnSkip"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:text="@string/label_skip_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpOnBoarding"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/mTabLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mbtnSkip" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabBackground="@drawable/tab_dot_background"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/tab_dot"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorGravity="center"
+            app:tabPaddingEnd="@dimen/_6sdp"
+            app:tabPaddingStart="@dimen/_6sdp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtnNext"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="@string/label_next_button"
+            app:cornerRadius="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/mTabLayout"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtnPrevious"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/label_previous_button"
+            app:layout_constraintBottom_toBottomOf="@+id/mTabLayout"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

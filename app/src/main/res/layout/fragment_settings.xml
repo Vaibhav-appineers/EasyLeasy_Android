@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.app.easyleasy.mvvm.AppConfig" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.app.easyleasy.dataclasses.response.LoginResponse" />
+
+        <variable
+            name="viewSetting"
+            type="com.app.easyleasy.mvvm.SettingViewConfig" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.settings.SettingsFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/label_settings_fragment_toolbar_text"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAccountSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/label_account_settings_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_drawable"
+                    android:orientation="vertical"
+                    android:showDividers="middle|end">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/tbPushNotification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:checked="true"
+                        android:text="@string/label_notifications_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGoAddFree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_go_adv_free_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:visibility="@{ viewSetting.showRemoveAdd? View.VISIBLE : View.GONE }" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSubscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_subcription_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:visibility="@{ viewSetting.showRemoveSubscription? View.VISIBLE : View.GONE }" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_edit_profile_toolbar_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_change_password_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:visibility="@{viewSetting.showChangePassword?View.VISIBLE:View.GONE}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvChangePhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_change_phone_number_toolbar_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:visibility="@{viewSetting.showChangePhone ? View.VISIBLE : View.GONE }" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeleteAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_delete"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_delete_account_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_power_settings"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_log_out_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/label_support_text"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_drawable"
+                    android:orientation="vertical"
+                    android:showDividers="middle|end">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAboutUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_about_us_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrivacyPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_privacy_policy_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTermsCondition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_terms_and_condition_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSendFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_send_feedback_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRateApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_rate_app_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShareApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_share_app_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLogs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:padding="@dimen/_12sdp"
+                        android:text="@string/label_logs_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!--<com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogout"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_52sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:text="@string/label_log_out_text"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="@dimen/_24sdp" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

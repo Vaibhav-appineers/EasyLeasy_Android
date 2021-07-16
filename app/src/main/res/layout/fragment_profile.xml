@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.easyleasy.viewModel.UserProfileViewModel" />
+
+        <variable
+            name="user"
+            type="com.app.easyleasy.dataclasses.response.LoginResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/label_profile_fragment_message_text"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_dimen_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RelativeOverlap" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMyProfile"
+            app:layout_constraintEnd_toEndOf="@+id/tvMyProfile"
+            app:layout_constraintTop_toTopOf="@+id/tvMyProfile" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMyProfile">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <com.mopub.mobileads.MoPubView
+                    android:id="@+id/moPubAdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_gravity="center"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sivUserImage"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/dimen_1dp"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{user.profileImage}"
+                    app:shapeAppearance="@style/ShapeAppearance.CircleImageView"
+                    app:srcCompat="@drawable/test"
+                    app:strokeColor="@color/colorPrimaryDark"
+                    app:strokeWidth="@dimen/_1sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@{user.getFullName()}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_dimen_16sp"
+                    tools:text="@tools:sample/lorem" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@{user.email}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_dimen_16sp"
+                    tools:text="@tools:sample/lorem" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

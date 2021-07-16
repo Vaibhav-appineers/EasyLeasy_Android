@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:title="@string/home"
+        android:icon="@drawable/home"/>
+
+    <item android:id="@+id/action_friends"
+        android:title="@string/friends"
+        android:icon="@drawable/friends"/>
+
+    <item android:id="@+id/action_message"
+        android:title="@string/message"
+        android:icon="@drawable/messages"/>
+
+    <item android:id="@+id/action_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/friends"/>
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/setting"
+        android:icon="@drawable/settings"/>
+</menu>

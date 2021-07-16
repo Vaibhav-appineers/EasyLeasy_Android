@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.master.android:simpleadapter:3.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4251d2b4a2b4a765222e4c52eb73e9cc/jetified-simpleadapter-3.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4251d2b4a2b4a765222e4c52eb73e9cc/jetified-simpleadapter-3.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4251d2b4a2b4a765222e4c52eb73e9cc/jetified-simpleadapter-3.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.master.android/simpleadapter/3.2/fd2043b5745ee616f6a382c0226edb50c7117255/simpleadapter-3.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.master.android/simpleadapter/3.2/52d44e96b0bf0f1ab4325011b8561714f66c7908/simpleadapter-3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
